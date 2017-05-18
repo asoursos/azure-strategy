@@ -1,5 +1,5 @@
-"# azure-strategy" 
-# AzureHeads Meetup: https://www.meetup.com/azureheads/events/239795905/
+# azure-strategy
+## AzureHeads Meetup: https://www.meetup.com/azureheads/events/239795905/
 
 Follow https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c steps for configuration.
 
