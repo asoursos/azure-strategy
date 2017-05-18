@@ -1,0 +1,13 @@
+﻿@model System.Collections.Generic.List<string>
+@{
+    ViewData["Title"] = "Latency Display";
+}
+<div style="padding:12px;"></div>
+<div id="app"></div>
+@section Scripts {
+<script src="~/lib/classnames/index.js"></script>
+<script src="~/lib/react/react.js"></script>
+<script src="~/lib/react/react-dom.js"></script>
+<script src="~/app.js" asp-append-version="true"></script>
+<script>ReactDOM.render(React.createElement(LatencyApp, null), document.getElementById('app'));</script>
+}

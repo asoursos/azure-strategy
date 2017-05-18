@@ -1,0 +1,63 @@
+﻿ /* Sample document
+ {
+    "city": "AGAWAM",
+    "pop": 15338,
+    "state": "MA",
+    "id": "01001",
+    "location": {
+      "type": "Point",
+      "coordinates": [
+        -72.622739,
+        42.070206
+      ]
+    }
+  }
+*/
+
+-- Coordinates of New York in decimal degrees
+-- Latitude: 40.7142700° 
+-- Longitude: -74.0059700° 
+
+-- Find the ZipCodes within 10 km from the NY center
+SELECT c.city, c.state, c.id 
+FROM c
+WHERE ST_DISTANCE(c.location, { 
+	"type": "Point", 
+	"coordinates": [-74.0059700, 40.7142700] --NOTE: GeoJSON format required order [Longitude, Latitude]
+}) < 1000 * 10
+
+
+
+
+-- Find the ZipCodes for the New York state
+SELECT c.city, c.state, c.id 
+FROM c
+WHERE c.state = 'NY'
+
+	
+// A very simple stored procedure that returns the ZIP for a given state (javascript equivalent of the previous query)
+function uspGetCityZipCodes(stateAbbreviation) {
+    var collection = getContext().getCollection();
+
+    var feedResult = collection
+        .chain()
+        .filter(function(doc) {
+            return doc.state == stateAbbreviation;
+        })
+        .map(function(doc) {
+            return {
+                id: doc.id,
+                state: doc.state,
+                city: doc.city            
+            };
+        })
+        .value(function(err, feed, options) {
+            if (err)
+                throw err;
+
+            getContext().getResponse().setBody(feed);
+        });
+
+    if (!feedResult.isAccepted)
+        throw new Error("The call was not accepted");
+}

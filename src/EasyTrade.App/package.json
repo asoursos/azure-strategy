@@ -1,0 +1,18 @@
+{
+  "name": "easy-trade",
+  "version": "1.0.0",
+  "description": "Easy Trade utility",
+  "main": "index.js",
+  "devDependencies": {
+    "@types/bootstrap": "^3.3.32",
+    "@types/classnames": "0.0.32",
+    "@types/jquery": "^2.0.40",
+    "@types/react": "^15.0.6",
+    "@types/react-dom": "^0.14.22"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
