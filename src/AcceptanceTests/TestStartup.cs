@@ -37,7 +37,7 @@ namespace AcceptanceTests
             services.AddMvc()
                 .AddApplicationPart(typeof(Bootstrap).GetTypeInfo().Assembly);
 
-            services.AddPcBlockServices();
+            services.AddServices();
 
             // Add Authentication services.
             services.AddAuthentication(sharedOptions => sharedOptions.SignInScheme = "TestAuthenticationMiddleware");

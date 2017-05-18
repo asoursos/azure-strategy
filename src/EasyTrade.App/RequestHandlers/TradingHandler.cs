@@ -14,7 +14,7 @@ namespace EasyTrade.App.RequestHandlers
         public int Id { get; set; }
     }
 
-    public class RulesHandler : IHandler<AddTradeRequest, TradeResult>
+    public class TradingHandler : IHandler<AddTradeRequest, TradeResult>
     {
         public Task<TradeResult> HandleAsync(AddTradeRequest message)
         {

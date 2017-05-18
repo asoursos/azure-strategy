@@ -6,7 +6,7 @@ namespace EasyTrade.App
 {
     public static class Bootstrap
     {
-        public static IServiceCollection AddPcBlockServices(this IServiceCollection services)
+        public static IServiceCollection AddServices(this IServiceCollection services)
         {
             // Generic Registrations
             services.AddTransient(provider => new ServiceFactory(provider.GetServices))
@@ -17,7 +17,7 @@ namespace EasyTrade.App
             services.AddTransient(typeof(IHandlerDecorator<,>), typeof(LogHandlerDecorator<,>));
 
             // Message Handlers registration 
-            services.AddTransient<IHandler<AddTradeRequest, TradeResult>, RulesHandler>();
+            services.AddTransient<IHandler<AddTradeRequest, TradeResult>, TradingHandler>();
 
             return services;
         }
