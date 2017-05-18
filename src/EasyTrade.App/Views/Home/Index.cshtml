@@ -1,0 +1,61 @@
+﻿@using Microsoft.AspNetCore.Hosting
+@using Microsoft.AspNetCore.Http
+@model IEnumerable<System.Security.Claims.Claim>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section jumbotron
+{
+    <div class="jumbotron">
+        <div class="container">
+            <environment names="a-b">
+                <h1>Welcome to Easy Trader!</h1>
+                <p>We can help you trade the easy way.</p>
+                <p>
+                    <a class="btn btn-warning btn-lg" onclick="appInsights.trackEvent('a1-register')" href="@(User.Identity.IsAuthenticated ? Url.Action("Index", "Trade") : Url.Action("SignIn", "Account"))" role="button">Trade Now!</a>
+                    <span class="help-block">This is an a-b test, testing the button's color.</span>
+                </p>
+            </environment>
+            <environment names="Staging,Production,Development">
+                <h1>Hello Easy Trader!</h1>
+                <p>Are you ready?</p>
+                <p>
+                    <a class="btn btn-primary btn-lg" onclick="appInsights.trackEvent('a1-register')" href="@(User.Identity.IsAuthenticated ? Url.Action("Index", "Trade") : Url.Action("SignIn", "Account"))" role="button">Trade Now!</a>
+                </p>
+            </environment>
+            
+</div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-3">
+        <h3>Research Analysis</h3>
+        <p>The best in town.</p>
+    </div>
+    <div class="col-md-3">
+        <h3>Trading</h3>
+        <p>Like you never before.</p>
+    </div>
+    <div class="col-md-3">
+        <h3>Pricing</h3>
+        <p>For a fistful of dollars.</p>
+    </div>
+    <div class="col-md-3">
+        <environment names="a-b">
+            <h3>Not ready for the new portal?</h3>
+            <p>Go back to the old portal.</p>
+            <p>
+                <a class="" href="~/?x-ms-routing-name=self" role="button">Opt-out</a>
+            </p>
+        </environment>
+        <environment names="Staging,Production,Development">
+            <h3>New Portal version is here!</h3>
+            <p>Do you want to try it?</p>
+            <p>
+                <a class="" href="~/?x-ms-routing-name=a-b" role="button">Opt-in</a>
+            </p>
+        </environment>
+    </div>
+</div>

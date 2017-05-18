@@ -1,0 +1,64 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageTargetFallback>$(PackageTargetFallback);portable-net45+win8+wp8+wpa81;</PackageTargetFallback>
+    <ApplicationInsightsResourceId>/subscriptions/d936698d-d41a-4961-991b-a0196cf898ec/resourcegroups/rg-azurestrategyprod/providers/microsoft.insights/components/easytradeprod</ApplicationInsightsResourceId>
+    <ApplicationInsightsAnnotationResourceId>/subscriptions/d936698d-d41a-4961-991b-a0196cf898ec/resourceGroups/rg-azurestrategyprod/providers/microsoft.insights/components/easytradeprod</ApplicationInsightsAnnotationResourceId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="wwwroot\app_offline.htm" />
+    <Content Include="wwwroot\OnMicrosoft\css\global.css" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\Ubuntu-Bold.ttf" />
+    <Content Include="wwwroot\OnMicrosoft\fonts\Ubuntu-Regular.ttf" />
+    <Content Include="wwwroot\OnMicrosoft\images\activedirectory.png" />
+    <Content Include="wwwroot\OnMicrosoft\images\background2.jpg" />
+    <Content Include="wwwroot\OnMicrosoft\images\facebook.png" />
+    <Content Include="wwwroot\OnMicrosoft\images\googleplus.png" />
+    <Content Include="wwwroot\OnMicrosoft\images\linkedin.png" />
+    <Content Include="wwwroot\OnMicrosoft\images\logo2.png" />
+    <Content Include="wwwroot\OnMicrosoft\images\microsoft.png" />
+    <Content Include="wwwroot\OnMicrosoft\phonefactor.html" />
+    <Content Include="wwwroot\OnMicrosoft\resetpassword.html" />
+    <Content Include="wwwroot\OnMicrosoft\selfasserted.html" />
+    <Content Include="wwwroot\OnMicrosoft\unified.html" />
+    <Content Include="wwwroot\OnMicrosoft\updateprofile.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Cookies" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.2" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Update="appsettings.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="config.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

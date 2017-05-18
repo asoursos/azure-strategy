@@ -1,0 +1,12 @@
+﻿{
+  //https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c
+  "AzureAD": {
+    "ClientId": "97ed4c48-335e-4834-8bcd-0e80d4b5ccd4",
+    "Tenant": "adeasytrade.onmicrosoft.com",
+    "AadInstance": "https://login.microsoftonline.com/{0}/v2.0/.well-known/openid-configuration?p={1}", // This is the public instance of Azure AD
+    "RedirectUri": "https://localhost:44377/",
+    "SignUpOrSignInPolicyId": "B2C_1_susi",
+    "UserProfilePolicyId": "B2C_1_up",
+    "ResetPwdPolicyId": "B2C_1_pwd"
+  }
+}
