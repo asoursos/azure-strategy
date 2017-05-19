@@ -4,7 +4,7 @@
 Follow https://github.com/Azure-Samples/active-directory-dotnet-webapp-openidconnect-aspnetcore-b2c steps for AD B2C configuration.
 
 Contains
-- CosmosDb multi region demo.
+- Cosmos DB globalization (latency across regions).
 - Active Directory B2C authentication/authorization.
 - Test in production - a/b testing, opt-in/opt-out.
 - A message dispatcher and equivalent request handlers.
